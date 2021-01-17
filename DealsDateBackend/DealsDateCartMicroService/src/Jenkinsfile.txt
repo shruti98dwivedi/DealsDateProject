@@ -1,0 +1,33 @@
+pipeline {
+    agent any
+    stages {
+        stage('clean stage') {
+            steps {
+                echo 'clean stage'
+            }
+        }
+         stage('install stage') {
+            steps {
+                echo 'install stage'
+            }
+        }
+        stage('complie stage') {
+            steps {
+                echo 'compile stage'
+            }
+        }
+        stage('package stage') {
+            steps {
+                echo 'package stage'
+            }
+        }
+        
+        stage('test stage') {
+            steps {
+                echo 'test stage'
+            }
+        }
+       
+       
+    }
+}
