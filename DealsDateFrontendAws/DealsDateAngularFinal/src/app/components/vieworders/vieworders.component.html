@@ -1,0 +1,36 @@
+
+<div class="panel panel-primary" class="container">
+    <div class="panel-heading">
+        
+        <!-- <b>Display Order Details!!</b> -->
+    
+
+    </div>
+    <nav class=" row bg-dark" id="nav">
+      
+    </nav><br>
+    <div class="panel-body">
+        <nav class="navbar navbar-light" style="background-color: #b8b3be;"><b>Display Order Details!!</b></nav>
+<table  class="col-md-10 mx-auto table table-striped table-hover table-bordered mt-4" >
+<thead>   
+<tr>
+    <th>Order Id</th>       
+    <th>Order Status</th>
+    <th>Payment Method</th>
+    <th>Order Quantity</th>
+    <th>Delete Order</th>
+</tr>
+</thead>
+<tbody>
+<tr *ngFor ="let o of orders | async">
+
+    <td>{{o.orderId}}</td> 
+    <td>{{o.orderStatus}}</td> 
+    <td>{{o.paymentMethod}}</td> 
+    <td>{{o.orderQuantity}}</td>
+    <td><a class="btn btn-danger text-white" (click)="deleteOrder(o.orderId)">Delete</a></td>
+ </tr>
+</tbody>
+</table>
+</div>
+</div>

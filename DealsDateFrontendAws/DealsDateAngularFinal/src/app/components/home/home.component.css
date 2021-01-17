@@ -1,0 +1,39 @@
+.container {
+    position: relative;
+    font-family: Arial;
+    
+  }   
+  .text-block {
+    position: absolute;
+    top: 220px;
+    bottom: 50px;
+    
+    color:white;
+    padding-left: 680px;
+    padding-right: 50px;
+  }
+
+ body{
+  height: 100vh;
+  width: 100%;
+  margin: 0%;
+}
+
+.wrapper{
+  display: grid;
+  grid-template: 1fr 2fr 1fr;
+  background-color: #E4F5FD;
+  height: 300px;
+  background-image: url("https://y6auj24xr4y3qq95tz7io6uu-wpengine.netdna-ssl.com/wp-content/uploads/2018/07/flowercakeateliersoo.jpeg");
+  margin: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 5px 10px;
+}
+
+main{
+  margin: 5%;
+}
+
+

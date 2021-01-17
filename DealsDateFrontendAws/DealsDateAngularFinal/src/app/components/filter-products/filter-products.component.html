@@ -1,0 +1,35 @@
+
+<mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+    </mat-card-header>
+    <mat-card-content>
+
+      <div class="row">
+          <form>
+            <div class="form-inline" >
+                <label for="select category" ></label>
+                <mat-select  [(ngModel)]="type" name="type" style="background-color:white;width: 200px;margin: 10px;height: 40px;text-align: justify;padding-top: 10px;padding-left: 50px;"
+>
+                  <mat-option  [value]="type">Low To High</mat-option>
+                  <mat-option  [value]="type">High To Low</mat-option>
+               
+               </mat-select>
+                <button class="btn btn-info " type="button"   style="margin-left: 50px;">
+                 OK
+                </button>
+                <button class="btn btn-info " type="button"   style="margin-left: 50px;">
+                    No,Thanks
+                   </button>
+             </div>  
+          </form>
+     </div>
+    </mat-card-content>
+
+
+    <mat-card-actions>
+     
+    </mat-card-actions>
+
+  </mat-card>
+

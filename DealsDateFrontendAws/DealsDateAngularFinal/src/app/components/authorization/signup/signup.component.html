@@ -1,0 +1,62 @@
+
+ <body id="body">
+    <style> 
+      #section {
+        box-sizing: content-box;  
+        width: 400px;
+        height: 2ew;
+        padding: 30px;  
+        border-width:3px;
+        border-color: gray;  
+        border-style:outset;
+        background-color: rgb(253, 253, 253);
+      }
+      #body{
+        background-color: rgb(243, 241, 241);
+    
+      }
+    </style>
+    <nav class=" row bg-dark p-2">
+      <a routerLink="signup" (click)="signup()"class="nav-link text-white">SignUp</a>&nbsp;&nbsp;
+      <a routerLink="login" (click)="login()" class="nav-link text-white">Login</a>
+    </nav>
+    <h2 class="text-center mt-3">SignUp please!</h2>
+    <section id = "section" class="col-md-4 mx-auto mt-4">
+      <form #frm="ngForm" (ngSubmit)="signUp()">
+        <div class="form-group">
+          <label class="mt-3" style="font-size:20px">Email ID</label>
+          <div><input type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="txtid" [(ngModel)]="user.email" class="form-control" #Email="ngModel" required /></div>
+          <div class="alert alert-dark mt-3" *ngIf="Email.invalid && (Email.touched || Email.dirty)">Please use an Email Id!</div>
+        </div>
+        <div class="form-group">
+          <label class="mt-3" style="font-size:20px">First Name</label>
+          <div><input type="text" pattern="[A-Za-z]{1,20}" name="txtfname" [(ngModel)]="user.firstname" class="form-control" #firstName="ngModel" required /></div>
+          <div class="alert alert-dark mt-3" *ngIf="firstName.invalid && (firstName.touched || firstName.dirty)">FirstName is required, and it must contain only characters!</div>
+        </div>
+        <div class="form-group">
+          <label class="mt-3" style="font-size:20px">Last Name</label>
+          <div><input type="text" pattern="[A-Za-z]{1,20}" name="txtlname" [(ngModel)]="user.lastname" class="form-control" #lastName="ngModel" required /></div>
+          <div class="alert alert-dark mt-3" *ngIf="lastName.invalid && (lastName.touched || lastName.dirty)">LastName is required, and it must contain only characters!</div>
+        </div>
+        <div class="form-group">
+          <label class="mt-3" style="font-size:20px">Password</label>
+          <div><input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="txtpass" [(ngModel)]="user.password" class="form-control" #password="ngModel" required validateEqual="txtcpass" reverse="true"/></div>
+          <div class="alert alert-dark mt-3" *ngIf="password.invalid && (password.touched || password.dirty)">Password must contain atleast 1 uppercase, 1 lowercase, 1 special character, 1 numerical value and atleast 8 characters!</div>
+        </div>
+        <div class="form-group">
+          <label class="mt-3" style="font-size:20px">Confirm Password</label>
+          <div><input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="txtcpass" [(ngModel)]="user.confirmPassword" class="form-control" #confirmPassword="ngModel" required validateEqual="txtpass"></div>
+          <div class="alert alert-dark mt-3" *ngIf="confirmPassword.invalid && (confirmPassword.touched || confirmPassword.dirty)">Password does not match!</div>
+        </div>
+        <div class="form-group">
+          <label class="mt-3" style="font-size:20px">Phone Number</label>
+          <div><input type="text" pattern="[6-9]{1}[0-9]{9}" name="txtnumber" [(ngModel)]="user.phoneNumber" class="form-control" #phoneNumber="ngModel" required /></div>
+          <div class="alert alert-dark mt-3" *ngIf="phoneNumber.invalid && (phoneNumber.touched || phoneNumber.dirty)">Phone Number must start with 6,7,8 and 9 and must be of 10 digits!</div>
+        </div>
+        <br>
+        <!-- <button class="btn btn-success pull-right" [disabled]="!frm.valid"  (click)="onSubmit()"> SignUp </button> -->
+          <div class="mt-3"><input type="submit" [disabled]="!frm.valid" class="btn btn-success pull-right" value="SignUp"/></div>
+      <br><br><br><br>
+        </form>
+      </section>
+    </body>

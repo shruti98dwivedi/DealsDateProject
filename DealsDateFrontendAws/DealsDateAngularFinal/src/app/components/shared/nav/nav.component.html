@@ -1,0 +1,59 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" [class.header_change]="header_variable">
+  <a class="navbar-brand" href="#">DealsDate Online Gift Store<mat-icon>card_giftcard</mat-icon></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor02">
+        <form  #categoryForm="ngForm"  class="form-inline my-2 my-lg-0">
+             <div class="form-group">
+               <select class="form-control  custom-select"  id="categoryName" required [(ngModel)]="categoryName" name="categoryName">
+                    <option *ngFor="let category of categoriesList" [value]="category">{{category}}</option>
+              </select>
+
+             </div>
+
+    <button class="btn btn-secondary my-2 my-sm-0" type="submit"  (click)="goToShoppingCart();categoryForm.reset()"><mat-icon >search</mat-icon></button>
+</form>
+
+
+  
+    
+    <ul class="navbar-nav mr-auto" style="padding-left: 480px;margin: 10px;">
+      <li class="nav-item active">
+        <a class="nav-link" href="#" routerLink="" data-toggle="tooltip" data-placement="top" title="" data-original-title="Home"><mat-icon>home</mat-icon>
+          <span class="sr-only">(current)</span>
+        </a>
+      </li> 
+      
+     
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/aboutUs"><mat-icon>info</mat-icon></a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/wishlist"><mat-icon> favorite</mat-icon></a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/cart"><mat-icon>add_shopping_cart</mat-icon></a>
+      </li>
+
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><mat-icon>account_circle</mat-icon></a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item"  routerLink="/login">Login</a>
+          <a class="dropdown-item"  routerLink="/signup">SignUp</a>
+          <a class="dropdown-item"  routerLink="/userprofile">Profile</a>
+          <a class="dropdown-item" (click)='logout()' routerLink="/login">Logout</a>
+          <a class="dropdown-item"  routerLink="/admin">Admin</a>
+        </div>
+      </li>
+    </ul>
+    
+  </div>
+
+
+</nav>
