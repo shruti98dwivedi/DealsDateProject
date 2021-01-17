@@ -1,0 +1,35 @@
+
+
+
+
+.product-list {
+  list-style-type: none;
+  margin: 20px;
+}
+
+.product-container {
+    padding: 2rem 3rem 0 0;
+    position: relative;
+    margin: 10px 0;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 50px 0;
+    box-shadow:5px 10px 10px ;
+
+}
+
+  .product_image {
+    max-height: 250px;
+    
+  }
+
+  .product_price {
+    float: right;
+    margin-top: 1rem;
+  }
+
+  .btn-secondary{
+    padding:5px;
+    margin: 5px;
+  }
+
+  

@@ -1,0 +1,72 @@
+
+<div class="container py-5">
+  <div class="row text-center text-white mb-5">
+    
+      <div class="col-lg-7 mx-auto">
+          <h1 style="font-family: 'Times New Roman', Times, serif;"><b>Pick your favourite Gifts...</b></h1>
+         
+      </div>
+      <h2 style="margin: 10px;">FILTER</h2>
+      <button type="button"  class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Price L->H" (click)="ascendingSort()"><mat-icon>arrow_upward</mat-icon></button>
+      <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Price H->L" (click)="descendingSort()"><mat-icon>arrow_downward</mat-icon></button>
+</div>
+<div class="row">
+    <div class="col-lg-8 mx-auto">
+          <!-- List group-->
+          <ul class="list-group shadow" *ngIf="isFilter; else elseBlock">
+              <!-- list group item-->
+              <li class="list-group-item">
+                  <!-- Custom content-->
+                  <div *ngFor="let product of productList">
+                      <div class="media align-items-lg-center flex-column flex-lg-row p-3">
+                          <div class="media-body order-2 order-lg-1">
+                              <h5 class="mt-0 font-weight-bold mb-2">{{product.productName}}</h5>
+                              <p class="font-italic text-muted mb-0 small">{{product.productSpecification}}|{{product.productColor}}|{{product.productCategory}}</p>
+                              <div class="d-flex align-items-center justify-content-between mt-1">
+                                  <h6 class="font-weight-bold my-2">₹{{product.productPrice}}</h6>
+                              </div>
+                              <div>
+                                <button (click)="goToCart(product)"   style=" border: 1px solid green;margin:5px;" mat-button><mat-icon>add_shopping_cart</mat-icon>CART</button>
+                                <button (click)="goToWishList(product)" style=" border: 1px solid red;margin:5px; " mat-button><mat-icon>favorite</mat-icon>WISHLIST</button>
+                              </div>
+                            
+                          </div><img [src]="product.imageUrl" alt="Generic placeholder image" width="200" class="ml-lg-5 order-1 order-lg-2">
+                      </div> <!-- End --> 
+                  </div>
+              </li>  
+              <!-- End -->
+          </ul>
+
+
+          <!--TESTING 2 LIST-->
+     <ng-template #elseBlock>
+          <ul class="list-group shadow"
+          >
+            <!-- list group item2-->
+            <li class="list-group-item">
+                <!-- Custom content2-->
+                <div *ngFor="let product of sortedProductList">
+                    <div class="media align-items-lg-center flex-column flex-lg-row p-3">
+                        <div class="media-body order-2 order-lg-1">
+                            <h5 class="mt-0 font-weight-bold mb-2">{{product.productName}}</h5>
+                            <p class="font-italic text-muted mb-0 small">{{product.productSpecification}}|{{product.productColor}}|{{product.productCategory}}</p>
+                            <div class="d-flex align-items-center justify-content-between mt-1">
+                                <h6 class="font-weight-bold my-2">₹{{product.productPrice}}</h6>
+                            </div>
+                            <button (click)="goToCart(product)" style=" border: 1px solid green;margin:5px;" mat-button><mat-icon>add_shopping_cart</mat-icon>CART</button>
+                            <button (click)="goToWishList(product)" style=" border: 1px solid red;margin:5px; " mat-button><mat-icon>favorite</mat-icon>WISHLIST</button>
+                        </div><img [src]="product.imageUrl" alt="Generic placeholder image" width="200" class="ml-lg-5 order-1 order-lg-2">
+                    </div> <!-- End2 --> 
+                </div>
+            </li>
+ 
+            
+            <!-- End 2-->
+        </ul>
+    </ng-template>
+
+      </div>
+  </div>
+</div>
+
+

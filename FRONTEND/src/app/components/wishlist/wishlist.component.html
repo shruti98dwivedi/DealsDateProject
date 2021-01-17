@@ -1,0 +1,31 @@
+<div class="container py-5">
+    <div class="row text-center text-white mb-5">
+        <div class="col-lg-7 mx-auto">
+            <h1 style="font-family: 'Times New Roman', Times, serif;"><b>WishList</b></h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <!-- List group-->
+            <ul class="list-group shadow">
+                <!-- list group item-->
+                <li class="list-group-item">
+                    <!-- Custom content-->
+                    <div *ngFor="let list of wishlist; let i=index">
+                        <div class="media align-items-lg-center flex-column flex-lg-row p-3">
+                            <div class="media-body order-2 order-lg-1">
+                                <h5 class="mt-0 font-weight-bold mb-2">{{list.productName}}</h5>
+                                <p class="font-italic text-muted mb-0 small">{{list.productDescription}}|{{list.productColor}}|{{list.productCategory}}</p>
+                                <div class="d-flex align-items-center justify-content-between mt-1">
+                                    <h6 class="font-weight-bold my-2">₹{{list.price}}</h6>
+                                </div>
+                                <button (click)="removeFromWishList(list.wishlistId)" style=" border: 1px solid rgb(8, 8, 8); margin: 5px;" mat-button><mat-icon>delete_forever</mat-icon>Remove</button>
+                                <button style=" border: 1px solid rgb(8, 8, 8);margin:5px"(click)="addToCart(list.productId,list)" mat-button><mat-icon>add_shopping_cart</mat-icon>CART</button>
+                            </div><img [src]="list.imageUerl" alt="Generic placeholder image" width="200" class="ml-lg-5 order-1 order-lg-2">
+                        </div> <!-- End --> 
+                    </div>
+                </li> <!-- End -->
+            </ul>
+        </div>
+    </div>
+</div>    

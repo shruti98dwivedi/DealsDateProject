@@ -1,0 +1,26 @@
+.bttns {
+    display: flex;
+    justify-content: space-between;
+}
+
+h3 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #6600FF;
+	text-align: center;
+}
+
+div {
+    column-gap: 40px;
+  }
+
+  .nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    background-color: darkcyan;
+}
+
+.right-side {
+    display: flex;
+}

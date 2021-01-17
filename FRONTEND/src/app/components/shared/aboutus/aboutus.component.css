@@ -1,0 +1,22 @@
+
+
+  body{
+    height: 100vh;
+    width: 100%;
+    margin: 0%;
+
+}
+
+
+.grid3{
+    display: grid;
+    grid-template-columns: 0.7fr 2fr;
+    padding: 15px;
+    padding-top: 50px;
+}
+img{
+    background-color: blanchedalmond;
+}
+main{
+    margin: 2%;
+}
